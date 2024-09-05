@@ -1,6 +1,7 @@
 import azure.functions as func
 import logging
 import msal
+import os
 
 # The user account to authenticate on behalf of
 username = 'coch.pbi@nhs.net'
@@ -10,9 +11,9 @@ password = 'hvo6-b9zd-jk75-pcvdc241'
 scope = ["https://analysis.windows.net/powerbi/api/.default"]
 
 # Azure AD application information
-client_id = '<your-client-id>'
-client_secret = '<your-client-secret>'
-authority_url = 'https://login.microsoftonline.com/<your-tenant-id>'
+client_id = 'e1cfb4ec-2c21-400c-a001-76f1ba480189'
+client_secret = os.getenv('CLIENT_SECRET')
+authority_url = 'https://login.microsoftonline.com/37c354b2-85b0-47f5-b222-07b48d774ee3'
 
 # Function definition
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
